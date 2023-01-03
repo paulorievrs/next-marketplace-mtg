@@ -1,18 +1,30 @@
+import clsx from "clsx";
 import Body from "../Body/Body";
 
 type ProductInfoTextParts = {
   title: string;
   description: string;
+  titleClassName?: string;
+  descriptionClassName?: string;
+  className?: string;
 };
 
 export default function ProductInfoText({
   title,
-  description
+  description,
+  titleClassName = "",
+  descriptionClassName = "",
+  className = ""
 }: ProductInfoTextParts) {
   return (
-    <div className="flex flex-row">
+    <div className={clsx("flex flex-row", className)}>
       <div className="w-full">
-        <Body fontSize="text-xs" color="text-info" fontWeight="font-medium">
+        <Body
+          fontSize="text-xs"
+          color="text-info"
+          fontWeight="font-medium"
+          className={titleClassName}
+        >
           {title}
         </Body>
       </div>
@@ -21,6 +33,7 @@ export default function ProductInfoText({
           fontSize="text-xs"
           color="text-secondary"
           fontWeight="font-medium"
+          className={descriptionClassName}
         >
           {description}
         </Body>
