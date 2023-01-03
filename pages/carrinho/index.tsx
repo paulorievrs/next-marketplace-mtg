@@ -8,7 +8,6 @@ import MyHead from "../../components/MyHead/MyHead";
 import NextPage from "../../components/NextPage/NextPage";
 
 export default function Cart() {
-  const quantityRef = useRef<HTMLInputElement>(null);
   return (
     <>
       <MyHead title="Calabouço do Android - Carrinho" />

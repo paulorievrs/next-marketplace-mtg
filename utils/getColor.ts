@@ -2,7 +2,7 @@ type prop = "text" | "bg" | "border" | "shadow";
 type colors = "primary"
 | "secondary"
 | "info"
-| "info-light"
+| "light-info"
 | "white"
 | "red";
 
