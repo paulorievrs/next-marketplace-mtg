@@ -36,7 +36,7 @@ export default function ProductCard({ shadow = false }: ProductCardsProps) {
         <div className="flex flex-row justify-between items-center cursor-pointer w-full">
           <Body
             fontWeight="font-bold"
-            color="text-info-light"
+            color="text-light-info"
             fontSize="text-lg"
           >
             R$ 1.000,00
