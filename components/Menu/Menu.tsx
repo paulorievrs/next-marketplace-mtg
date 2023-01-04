@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { useCartContext } from "../../contexts/CartContext";
 import Body from "../Body/Body";
 import CartIcon from "../icons/CartIcon";
 import CloseIcon from "../icons/CloseIcon";
@@ -7,6 +8,8 @@ import MenuIcon from "../icons/MenuIcon";
 import MenuItems from "./MenuItems";
 
 export default function Menu() {
+  const cartContext = useCartContext();
+
   const [isOpen, setIsOpen] = useState(false);
 
   const router = useRouter();
@@ -61,7 +64,7 @@ export default function Menu() {
           >
             <CartIcon />
             <Body className="w-full whitespace-nowrap" fontWeight="font-bold">
-              5 itens
+              {cartContext?.cart?.cards?.length} itens
             </Body>
           </div>
         </div>

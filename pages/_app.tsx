@@ -4,6 +4,7 @@ import Menu from "../components/Menu/Menu";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Footer from "../components/Footer/Footer";
+import CartContextProvider from "../contexts/CartContext";
 
 import { Montserrat } from "@next/font/google";
 const montserrat = Montserrat({
@@ -11,12 +12,18 @@ const montserrat = Montserrat({
   variable: "--font-montserrat"
 });
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <main className={`${montserrat.variable} font-sans layout`}>
-      <Menu />
-      <Component {...pageProps} />
-      {/* <Footer /> */}
+      <ToastContainer />
+      <CartContextProvider>
+        <Menu />
+        <Component {...pageProps} />
+        {/* <Footer /> */}
+      </CartContextProvider>
     </main>
   );
 }

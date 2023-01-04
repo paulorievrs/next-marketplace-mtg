@@ -7,19 +7,25 @@ import ProductCard, { Card } from "../components/ProductCard/ProductCard";
 
 const cards: Card[] = [
   {
+    id: 1,
     name: "Abzan Beastmaster",
     image: "/abzan-beastmaster.jpeg",
-    price: 10
+    price: 10,
+    quantity: 10
   },
   {
+    id: 2,
     name: "Falling Timber",
     image: "/falling-timber.jpeg",
-    price: 10.5
+    price: 10.5,
+    quantity: 8
   },
   {
+    id: 3,
     name: "Sentinel Tower",
     image: "/sentinel-tower.jpeg",
-    price: 0.5
+    price: 0.5,
+    quantity: 2
   }
 ];
 

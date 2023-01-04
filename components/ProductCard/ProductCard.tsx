@@ -1,15 +1,20 @@
 import clsx from "clsx";
 import Image from "next/image";
+import { useContext } from "react";
+import { useCartContext } from "../../contexts/CartContext";
 import { formatCurrencyBrl } from "../../utils/format";
 import Body from "../Body/Body";
 import ArrowRight from "../icons/ArrowRight";
 import CartIcon from "../icons/CartIcon";
+import NextPage from "../NextPage/NextPage";
 import ProductInfoText from "./ProductInfoText";
 
 export type Card = {
+  id: number;
   name: string;
   image: string;
   price: number;
+  quantity: number;
 };
 
 type ProductCardsProps = {
@@ -21,6 +26,8 @@ export default function ProductCard({
   shadow = false,
   card
 }: ProductCardsProps) {
+  const cartContext = useCartContext();
+
   return (
     <div
       className={clsx(
@@ -44,16 +51,12 @@ export default function ProductCard({
           <ProductInfoText title={"Tipo: "} description={"Instant"} />
           <ProductInfoText title={"Edição: "} description={"Dominária"} />
         </div>
-        <div className="flex flex-row justify-between items-center cursor-pointer w-full">
-          <Body
-            fontWeight="font-bold"
-            color="text-light-info"
-            fontSize="text-lg"
-          >
-            {formatCurrencyBrl(card.price)}
-          </Body>
-          <CartIcon />
-        </div>
+
+        <NextPage
+          pageTitle={formatCurrencyBrl(card.price)}
+          Icon={CartIcon}
+          onClick={() => cartContext?.addItemToCart(card)}
+        />
       </div>
     </div>
   );

@@ -1,4 +1,6 @@
 import { RefObject } from "react";
+import { CartItemType } from "../../../contexts/CartContext";
+import { Card } from "../../ProductCard/ProductCard";
 import CartItem from "./CartItem";
 
 type TableHeadItemProps = {
@@ -11,7 +13,11 @@ const TableHeadItem = ({ item }: TableHeadItemProps) => (
   </th>
 );
 
-export default function WebCart() {
+export default function WebCart({
+  cards = []
+}: {
+  cards?: CartItemType<Card>[];
+}) {
   return (
     <div className="shadow-sm overflow-x-scroll mt-8 hidden lg:block">
       <table className="border-collapse table-auto w-full text-sm">
@@ -24,11 +30,9 @@ export default function WebCart() {
           </tr>
         </thead>
         <tbody className="bg-white">
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
+          {cards.map((card) => (
+            <CartItem card={card} key={card.id} />
+          ))}
         </tbody>
       </table>
     </div>
