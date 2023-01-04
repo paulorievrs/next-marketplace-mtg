@@ -43,7 +43,7 @@ export default function Menu() {
       <div className="flex flex-col mb-12 px-4 mt-8 gap-4 md:flex-row md:justify-center md:gap-10">
         <div className="flex flex-row items-center justify-between">
           <span
-            className="font-bold text-sm uppercase leading-4 text-light-info w-full whitespace-nowrap cursor-pointer"
+            className="font-bold text-sm uppercase leading-4 text-light-info w-full lg:whitespace-nowrap cursor-pointer"
             onClick={() => router.push("/")}
           >
             Calabouço do android
@@ -55,10 +55,6 @@ export default function Menu() {
         </div>
         <WebMenu />
         <div className="flex flex-row items-center justify-between md:gap-12">
-          <Body className="w-full whitespace-nowrap" fontWeight="font-bold">
-            +7 7172 264 55 55
-          </Body>
-
           <div
             className="flex items-center gap-3 cursor-pointer"
             onClick={handleCartClick}
