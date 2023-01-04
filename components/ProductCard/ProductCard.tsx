@@ -1,14 +1,26 @@
 import clsx from "clsx";
 import Image from "next/image";
+import { formatCurrencyBrl } from "../../utils/format";
 import Body from "../Body/Body";
 import ArrowRight from "../icons/ArrowRight";
+import CartIcon from "../icons/CartIcon";
 import ProductInfoText from "./ProductInfoText";
+
+export type Card = {
+  name: string;
+  image: string;
+  price: number;
+};
 
 type ProductCardsProps = {
   shadow?: boolean;
+  card: Card;
 };
 
-export default function ProductCard({ shadow = false }: ProductCardsProps) {
+export default function ProductCard({
+  shadow = false,
+  card
+}: ProductCardsProps) {
   return (
     <div
       className={clsx(
@@ -18,17 +30,17 @@ export default function ProductCard({ shadow = false }: ProductCardsProps) {
     >
       <div className="flex flex-col gap-8 md:justify-center md:items-center">
         <Body fontWeight="font-black" fontSize="text-lg">
-          Brincar com fogo
+          {card.name}
         </Body>
-        <Image
-          src="/cardImage.jpeg"
-          alt="Card image"
-          width={230}
-          height={330}
-        />
 
-        <div className="flex flex-col md:w-full md:text-center">
-          <ProductInfoText title={"Cor: "} description={"Verde"} />
+        <div className="flex flex-col md:w-full md:text-start">
+          <Image src={card.image} alt="Card image" width={230} height={330} />
+
+          <ProductInfoText
+            title={"Cor: "}
+            description={"Verde"}
+            className={"mt-3"}
+          />
           <ProductInfoText title={"Tipo: "} description={"Instant"} />
           <ProductInfoText title={"Edição: "} description={"Dominária"} />
         </div>
@@ -38,9 +50,9 @@ export default function ProductCard({ shadow = false }: ProductCardsProps) {
             color="text-light-info"
             fontSize="text-lg"
           >
-            R$ 1.000,00
+            {formatCurrencyBrl(card.price)}
           </Body>
-          <ArrowRight />
+          <CartIcon />
         </div>
       </div>
     </div>

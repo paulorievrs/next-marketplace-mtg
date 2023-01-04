@@ -3,7 +3,25 @@ import Button from "../components/Button/Button";
 import H1 from "../components/H1/H1";
 import Container from "../components/Container/Container";
 import MyHead from "../components/MyHead/MyHead";
-import ProductCard from "../components/ProductCard/ProductCard";
+import ProductCard, { Card } from "../components/ProductCard/ProductCard";
+
+const cards: Card[] = [
+  {
+    name: "Abzan Beastmaster",
+    image: "/abzan-beastmaster.jpeg",
+    price: 10
+  },
+  {
+    name: "Falling Timber",
+    image: "/falling-timber.jpeg",
+    price: 10.5
+  },
+  {
+    name: "Sentinel Tower",
+    image: "/sentinel-tower.jpeg",
+    price: 0.5
+  }
+];
 
 export default function Home() {
   return (
@@ -28,14 +46,9 @@ export default function Home() {
         <Container>
           <H1>Promoções</H1>
           <div className="flex flex-col gap-5 md:grid md:grid-cols-4">
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
+            {cards.map((card, index) => (
+              <ProductCard card={card} key={index} />
+            ))}
           </div>
         </Container>
       </div>
