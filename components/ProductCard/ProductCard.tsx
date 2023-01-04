@@ -25,7 +25,6 @@ export default function ProductCard({ shadow = false }: ProductCardsProps) {
           alt="Card image"
           width={230}
           height={330}
-          className="md:w-1/2"
         />
 
         <div className="flex flex-col md:w-full md:text-center">

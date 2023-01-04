@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <main className={`${montserrat.variable} font-sans layout`}>
       <Menu />
       <Component {...pageProps} />
-      <Footer />
+      {/* <Footer /> */}
     </main>
   );
 }

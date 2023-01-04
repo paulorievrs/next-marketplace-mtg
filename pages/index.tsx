@@ -1,10 +1,9 @@
-import Head from "next/head";
 import Body from "../components/Body/Body";
 import Button from "../components/Button/Button";
-import ProductCarousel from "../components/ProductCarousel/ProductCarousel";
 import H1 from "../components/H1/H1";
 import Container from "../components/Container/Container";
 import MyHead from "../components/MyHead/MyHead";
+import ProductCard from "../components/ProductCard/ProductCard";
 
 export default function Home() {
   return (
@@ -28,7 +27,16 @@ export default function Home() {
         <div className="bg-light-gray mt-14 w-128"></div>
         <Container>
           <H1>Promoções</H1>
-          <ProductCarousel />
+          <div className="flex flex-col gap-5 md:grid md:grid-cols-4">
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+          </div>
         </Container>
       </div>
     </>
