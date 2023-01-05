@@ -2,8 +2,8 @@ import Body from '../components/Body/Body'
 import Button from '../components/Button/Button'
 import H1 from '../components/H1/H1'
 import Container from '../components/Container/Container'
-import MyHead from '../components/MyHead/MyHead'
 import ProductCard, { Card } from '../components/ProductCard/ProductCard'
+import Head from 'next/head'
 
 const cards: Card[] = [
   {
@@ -39,7 +39,9 @@ const cards: Card[] = [
 export default function Home() {
   return (
     <>
-      <MyHead />
+      <Head>
+        <title>Calabouço do Android</title>
+      </Head>
       <div className="flex flex-col gap-2">
         <Container className="flex flex-col gap-4 items-start  lg:gap-16 lg:flex-row ">
           <div className="flex flex-col gap-4 items-start">

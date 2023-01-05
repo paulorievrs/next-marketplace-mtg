@@ -1,9 +1,9 @@
+import Head from 'next/head'
 import Body from '../../components/Body/Body'
 import MobileCart from '../../components/Cart/MobileCart/MobileCart'
 import WebCart from '../../components/Cart/WebCart/WebCart'
 import Container from '../../components/Container/Container'
 import H1 from '../../components/H1/H1'
-import MyHead from '../../components/MyHead/MyHead'
 import NextPage from '../../components/NextPage/NextPage'
 import { useCartContext } from '../../contexts/CartContext'
 
@@ -12,7 +12,9 @@ export default function Cart() {
 
   return (
     <>
-      <MyHead title="Calabouço do Android - Carrinho" />
+      <Head>
+        <title>Calabouço do Android - Carrinho</title>
+      </Head>
       <Container>
         <H1>Cart</H1>
         <div>

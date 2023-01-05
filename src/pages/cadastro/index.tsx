@@ -2,11 +2,11 @@ import Button from '../../components/Button/Button'
 import Container from '../../components/Container/Container'
 import H1 from '../../components/H1/H1'
 import Input from '../../components/Input/Input'
-import MyHead from '../../components/MyHead/MyHead'
 
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
+import Head from 'next/head'
 
 const validationSchema = z
   .object({
@@ -41,7 +41,9 @@ export default function Cadastro() {
 
   return (
     <>
-      <MyHead title="Calabouço do Android - Cadastro" />
+      <Head>
+        <title>Calabouço do Android - Cadastro</title>
+      </Head>
       <Container>
         <H1>Faça seu cadastro</H1>
         <form

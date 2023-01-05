@@ -4,11 +4,11 @@ import Button from '../../components/Button/Button'
 import Container from '../../components/Container/Container'
 import H1 from '../../components/H1/H1'
 import Input from '../../components/Input/Input'
-import MyHead from '../../components/MyHead/MyHead'
 
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
+import Head from 'next/head'
 
 const validationSchema = z.object({
   email: z.string().min(1, { message: 'E-mail é obrigatório' }).email({
@@ -33,7 +33,9 @@ export default function Login() {
 
   return (
     <>
-      <MyHead title="Calabouço do Android - Login" />
+      <Head>
+        <title>Calabouço do Android - Login</title>
+      </Head>
       <Container>
         <H1>Faça seu login</H1>
         <form
