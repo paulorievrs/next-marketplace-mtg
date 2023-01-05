@@ -1,22 +1,21 @@
-import { RefObject } from "react";
-import { CartItemType } from "../../../contexts/CartContext";
-import { Card } from "../../ProductCard/ProductCard";
-import CartItem from "./CartItem";
+import { CartItemType } from '../../../contexts/CartContext'
+import { Card } from '../../ProductCard/ProductCard'
+import CartItem from './CartItem'
 
 type TableHeadItemProps = {
-  item: string;
-};
+  item: string
+}
 
 const TableHeadItem = ({ item }: TableHeadItemProps) => (
   <th className="border-b border-b-primary text-left font-medium p-4 pr-8 pt-0 pb-3 text-primary whitespace-nowrap">
     {item}
   </th>
-);
+)
 
 export default function WebCart({
-  cards = []
+  cards = [],
 }: {
-  cards?: CartItemType<Card>[];
+  cards?: CartItemType<Card>[]
 }) {
   return (
     <div className="shadow-sm overflow-x-scroll mt-8 hidden lg:block">
@@ -36,5 +35,5 @@ export default function WebCart({
         </tbody>
       </table>
     </div>
-  );
+  )
 }

@@ -1,23 +1,23 @@
-import { useRouter } from "next/router";
-import { useState } from "react";
-import { useCartContext } from "../../contexts/CartContext";
-import Body from "../Body/Body";
-import CartIcon from "../icons/CartIcon";
-import CloseIcon from "../icons/CloseIcon";
-import MenuIcon from "../icons/MenuIcon";
-import MenuItems from "./MenuItems";
+import { useRouter } from 'next/router'
+import { useState } from 'react'
+import { useCartContext } from '../../contexts/CartContext'
+import Body from '../Body/Body'
+import CartIcon from '../icons/CartIcon'
+import CloseIcon from '../icons/CloseIcon'
+import MenuIcon from '../icons/MenuIcon'
+import MenuItems from './MenuItems'
 
 export default function Menu() {
-  const cartContext = useCartContext();
+  const cartContext = useCartContext()
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
-  const router = useRouter();
+  const router = useRouter()
 
   const handleCartClick = () => {
-    setIsOpen(false);
-    router.push("/carrinho");
-  };
+    setIsOpen(false)
+    router.push('/carrinho')
+  }
 
   const MobileMenu = () => {
     return (
@@ -30,16 +30,16 @@ export default function Menu() {
           <MenuItems type="mobile" />
         </div>
       </div>
-    );
-  };
+    )
+  }
 
   const WebMenu = () => {
     return (
       <div className="hidden md:flex flex-row gap-8 items-center">
         <MenuItems type="web" />
       </div>
-    );
-  };
+    )
+  }
 
   return (
     <div className="sm:relative w-full md:px-52">
@@ -47,7 +47,7 @@ export default function Menu() {
         <div className="flex flex-row items-center justify-between">
           <span
             className="font-bold text-sm uppercase leading-4 text-light-info w-full lg:whitespace-nowrap cursor-pointer"
-            onClick={() => router.push("/")}
+            onClick={() => router.push('/')}
           >
             Calabouço do android
           </span>
@@ -71,5 +71,5 @@ export default function Menu() {
       </div>
       {isOpen && <MobileMenu />}
     </div>
-  );
+  )
 }

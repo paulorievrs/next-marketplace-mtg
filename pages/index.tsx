@@ -1,40 +1,40 @@
-import Body from "../components/Body/Body";
-import Button from "../components/Button/Button";
-import H1 from "../components/H1/H1";
-import Container from "../components/Container/Container";
-import MyHead from "../components/MyHead/MyHead";
-import ProductCard, { Card } from "../components/ProductCard/ProductCard";
+import Body from '../components/Body/Body'
+import Button from '../components/Button/Button'
+import H1 from '../components/H1/H1'
+import Container from '../components/Container/Container'
+import MyHead from '../components/MyHead/MyHead'
+import ProductCard, { Card } from '../components/ProductCard/ProductCard'
 
 const cards: Card[] = [
   {
     id: 1,
-    name: "Abzan Beastmaster",
-    image: "/abzan-beastmaster.jpeg",
+    name: 'Abzan Beastmaster',
+    image: '/abzan-beastmaster.jpeg',
     price: 10,
-    quantity: 10
+    quantity: 10,
   },
   {
     id: 2,
-    name: "Falling Timber",
-    image: "/falling-timber.jpeg",
+    name: 'Falling Timber',
+    image: '/falling-timber.jpeg',
     price: 10.5,
-    quantity: 8
+    quantity: 8,
   },
   {
     id: 3,
-    name: "Sentinel Tower",
-    image: "/sentinel-tower.jpeg",
+    name: 'Sentinel Tower',
+    image: '/sentinel-tower.jpeg',
     price: 0.5,
-    quantity: 2
+    quantity: 2,
   },
   {
     id: 4,
-    name: "Sentinel Tower",
-    image: "/sentinel-tower.jpeg",
+    name: 'Sentinel Tower',
+    image: '/sentinel-tower.jpeg',
     price: 0.5,
-    quantity: 2
-  }
-];
+    quantity: 2,
+  },
+]
 
 export default function Home() {
   return (
@@ -66,5 +66,5 @@ export default function Home() {
         </Container>
       </div>
     </>
-  );
+  )
 }

@@ -1,15 +1,14 @@
-import { useRef } from "react";
-import Body from "../../components/Body/Body";
-import MobileCart from "../../components/Cart/MobileCart/MobileCart";
-import WebCart from "../../components/Cart/WebCart/WebCart";
-import Container from "../../components/Container/Container";
-import H1 from "../../components/H1/H1";
-import MyHead from "../../components/MyHead/MyHead";
-import NextPage from "../../components/NextPage/NextPage";
-import { useCartContext } from "../../contexts/CartContext";
+import Body from '../../components/Body/Body'
+import MobileCart from '../../components/Cart/MobileCart/MobileCart'
+import WebCart from '../../components/Cart/WebCart/WebCart'
+import Container from '../../components/Container/Container'
+import H1 from '../../components/H1/H1'
+import MyHead from '../../components/MyHead/MyHead'
+import NextPage from '../../components/NextPage/NextPage'
+import { useCartContext } from '../../contexts/CartContext'
 
 export default function Cart() {
-  const cartContext = useCartContext();
+  const cartContext = useCartContext()
 
   return (
     <>
@@ -34,5 +33,5 @@ export default function Cart() {
         <NextPage pageTitle="Finalizar compra" />
       </Container>
     </>
-  );
+  )
 }

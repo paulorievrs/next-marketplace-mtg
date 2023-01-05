@@ -1,17 +1,17 @@
-import Body from "../Body/Body";
-import ArrowRight from "../icons/ArrowRight";
+import Body from '../Body/Body'
+import ArrowRight from '../icons/ArrowRight'
 
 type NextPageProps = {
-  pageTitle: string;
+  pageTitle: string
   //linkTo: string;
-  Icon?: () => JSX.Element;
-  onClick?: () => void;
-};
+  Icon?: () => JSX.Element
+  onClick?: () => void
+}
 
 export default function NextPage({
   pageTitle,
   Icon = ArrowRight,
-  onClick = () => {}
+  onClick = () => null,
 }: NextPageProps) {
   return (
     <div
@@ -23,5 +23,5 @@ export default function NextPage({
       </Body>
       <Icon />
     </div>
-  );
+  )
 }

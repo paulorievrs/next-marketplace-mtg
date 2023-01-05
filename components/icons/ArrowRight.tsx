@@ -9,5 +9,5 @@ export default function ArrowRight() {
     >
       <path d="M0 9.5H20M20 9.5L8.64865 1M20 9.5L8.64865 18" stroke="#EB2D66" />
     </svg>
-  );
+  )
 }

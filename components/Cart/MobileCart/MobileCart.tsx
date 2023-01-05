@@ -1,12 +1,12 @@
-import clsx from "clsx";
-import { CartItemType } from "../../../contexts/CartContext";
-import { Card } from "../../ProductCard/ProductCard";
-import CartItem from "./CartItem";
+import clsx from 'clsx'
+import { CartItemType } from '../../../contexts/CartContext'
+import { Card } from '../../ProductCard/ProductCard'
+import CartItem from './CartItem'
 
 export default function MobileCart({
-  cards = []
+  cards = [],
 }: {
-  cards?: CartItemType<Card>[];
+  cards?: CartItemType<Card>[]
 }) {
   return (
     <div className="block lg:hidden">
@@ -20,5 +20,5 @@ export default function MobileCart({
         ))}
       </div>
     </div>
-  );
+  )
 }

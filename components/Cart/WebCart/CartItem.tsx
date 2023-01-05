@@ -1,19 +1,19 @@
-import Image from "next/image";
-import { ReactNode, RefObject } from "react";
-import { CartItemType } from "../../../contexts/CartContext";
-import { formatCurrencyBrl } from "../../../utils/format";
-import TrashIcon from "../../icons/Trash";
-import { Card } from "../../ProductCard/ProductCard";
+import Image from 'next/image'
+import { ReactNode } from 'react'
+import { CartItemType } from '../../../contexts/CartContext'
+import { formatCurrencyBrl } from '../../../utils/format'
+import TrashIcon from '../../icons/Trash'
+import { Card } from '../../ProductCard/ProductCard'
 
 type ItemProps = {
-  children: ReactNode;
-};
+  children: ReactNode
+}
 
 const Item = ({ children }: ItemProps) => (
   <td className="border-slate-100 p-4 text-primary group-hover:text-white">
     {children}
   </td>
-);
+)
 
 export default function CartItem({ card }: { card: CartItemType<Card> }) {
   return (
@@ -35,12 +35,12 @@ export default function CartItem({ card }: { card: CartItemType<Card> }) {
             min={1}
             max={card.quantity}
             value={card.quantitySelected}
-            type={"number"}
+            type={'number'}
             className="pl-1 text-primary h-8 border border-dark-primary outline-0 focus:outline-none group-hover:text-white group-hover:bg-primary"
           />
-          <TrashIcon fill={"#eb2d66"} />
+          <TrashIcon fill={'#eb2d66'} />
         </div>
       </Item>
     </tr>
-  );
+  )
 }

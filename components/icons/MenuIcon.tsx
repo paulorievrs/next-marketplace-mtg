@@ -1,8 +1,8 @@
-import IconProps from "./IconProps";
+import IconProps from './IconProps'
 
 export default function MenuIcon({
-  onClick = () => {},
-  className = ""
+  onClick = () => null,
+  className = '',
 }: IconProps) {
   return (
     <svg
@@ -18,5 +18,5 @@ export default function MenuIcon({
       <rect y="10" width="31" height="3" fill="#2A2D46" />
       <path d="M0 20H31V23H0V20Z" fill="#2A2D46" />
     </svg>
-  );
+  )
 }

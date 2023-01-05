@@ -1,13 +1,13 @@
-import clsx from "clsx";
+import clsx from 'clsx'
 
 type ContainerProps = {
-  children: React.ReactNode;
-  className?: string;
-};
+  children: React.ReactNode
+  className?: string
+}
 
 export default function Container({
   children,
-  className = ""
+  className = '',
 }: ContainerProps) {
-  return <div className={clsx("px-4 lg:px-56", className)}>{children}</div>;
+  return <div className={clsx('px-4 lg:px-56', className)}>{children}</div>
 }

@@ -1,8 +1,8 @@
-import { Color } from "../../utils/getColor";
-import Body from "../Body/Body";
+import { Color } from '../../utils/getColor'
+import Body from '../Body/Body'
 
-export default function MenuItems({ type }: { type: "web" | "mobile" }) {
-  const color: Color = type === "web" ? "text-primary" : "text-white";
+export default function MenuItems({ type }: { type: 'web' | 'mobile' }) {
+  const color: Color = type === 'web' ? 'text-primary' : 'text-white'
 
   const MenuItem = ({ children }: { children: React.ReactNode }) => (
     <Body
@@ -11,7 +11,7 @@ export default function MenuItems({ type }: { type: "web" | "mobile" }) {
     >
       {children}
     </Body>
-  );
+  )
 
   return (
     <>
@@ -20,5 +20,5 @@ export default function MenuItems({ type }: { type: "web" | "mobile" }) {
       <MenuItem>Categorias</MenuItem>
       <MenuItem>Categorias</MenuItem>
     </>
-  );
+  )
 }

@@ -1,23 +1,23 @@
-import clsx from "clsx";
-import Body from "../Body/Body";
+import clsx from 'clsx'
+import Body from '../Body/Body'
 
 type ProductInfoTextParts = {
-  title: string;
-  description: string;
-  titleClassName?: string;
-  descriptionClassName?: string;
-  className?: string;
-};
+  title: string
+  description: string
+  titleClassName?: string
+  descriptionClassName?: string
+  className?: string
+}
 
 export default function ProductInfoText({
   title,
   description,
-  titleClassName = "",
-  descriptionClassName = "",
-  className = ""
+  titleClassName = '',
+  descriptionClassName = '',
+  className = '',
 }: ProductInfoTextParts) {
   return (
-    <div className={clsx("flex flex-row", className)}>
+    <div className={clsx('flex flex-row', className)}>
       <div className="w-full">
         <Body
           fontSize="text-xs"
@@ -39,5 +39,5 @@ export default function ProductInfoText({
         </Body>
       </div>
     </div>
-  );
+  )
 }

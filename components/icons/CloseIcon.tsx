@@ -1,8 +1,8 @@
-import IconProps from "./IconProps";
+import IconProps from './IconProps'
 
 export default function CloseIcon({
-  onClick = () => {},
-  className = ""
+  onClick = () => null,
+  className = '',
 }: IconProps) {
   return (
     <svg
@@ -16,5 +16,5 @@ export default function CloseIcon({
     >
       <path d="M1 1.5L30 30.5M30 1.5L1 30.5" stroke="white" strokeWidth="2" />
     </svg>
-  );
+  )
 }

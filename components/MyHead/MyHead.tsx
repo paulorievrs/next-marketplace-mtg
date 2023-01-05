@@ -1,10 +1,10 @@
-import Head from "next/head";
+import Head from 'next/head'
 
 type HeadProps = {
-  title?: string;
-};
+  title?: string
+}
 
-export default function MyHead({ title = "Calabouço do Android" }: HeadProps) {
+export default function MyHead({ title = 'Calabouço do Android' }: HeadProps) {
   return (
     <Head>
       <title>{title}</title>
@@ -12,5 +12,5 @@ export default function MyHead({ title = "Calabouço do Android" }: HeadProps) {
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-  );
+  )
 }

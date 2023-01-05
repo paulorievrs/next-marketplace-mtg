@@ -1,10 +1,10 @@
-import Image from "next/image";
-import { CartItemType } from "../../../contexts/CartContext";
-import { formatCurrencyBrl } from "../../../utils/format";
-import Body from "../../Body/Body";
-import TrashIcon from "../../icons/Trash";
-import { Card } from "../../ProductCard/ProductCard";
-import ProductInfoText from "../../ProductCard/ProductInfoText";
+import Image from 'next/image'
+import { CartItemType } from '../../../contexts/CartContext'
+import { formatCurrencyBrl } from '../../../utils/format'
+import Body from '../../Body/Body'
+import TrashIcon from '../../icons/Trash'
+import { Card } from '../../ProductCard/ProductCard'
+import ProductInfoText from '../../ProductCard/ProductInfoText'
 
 export default function CartItem({ card }: { card: CartItemType<Card> }) {
   return (
@@ -16,18 +16,18 @@ export default function CartItem({ card }: { card: CartItemType<Card> }) {
           <div className="flex flex-col md:w-full md:text-center gap-2">
             <div>
               <ProductInfoText
-                title={"Em estoque: "}
+                title={'Em estoque: '}
                 description={`${card.quantity}x`}
-                titleClassName={"whitespace-nowrap"}
-                className={"gap-1"}
+                titleClassName={'whitespace-nowrap'}
+                className={'gap-1'}
               />
 
               <ProductInfoText
-                title={"Valor Unit:"}
+                title={'Valor Unit:'}
                 description={formatCurrencyBrl(card.price)}
               />
               <ProductInfoText
-                title={"Valor total:"}
+                title={'Valor total:'}
                 description={formatCurrencyBrl(card.price * card.quantity)}
               />
             </div>
@@ -38,14 +38,14 @@ export default function CartItem({ card }: { card: CartItemType<Card> }) {
                 min={1}
                 max={card.quantity}
                 value={card.quantitySelected}
-                type={"number"}
+                type={'number'}
                 className="pl-1 text-primary h-6 border border-dark-primary outline-0 focus:outline-none w-full placeholder:text-sm"
               />
-              <TrashIcon fill={"#eb2d66"} />
+              <TrashIcon fill={'#eb2d66'} />
             </div>
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
