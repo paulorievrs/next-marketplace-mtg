@@ -31,11 +31,11 @@ export default function ProductCard({
   return (
     <div
       className={clsx(
-        `bg-white px-10 pt-5 pb-8 mt-10 flex flex-col gap-8 shadow `,
+        `bg-white px-10 pt-5 pb-8 mt-10 flex flex-col gap-8 shadow place-items-center `,
         `${shadow ? "shadow-5xl" : ""}`
       )}
     >
-      <div className="flex flex-col gap-8 md:justify-center md:items-center">
+      <div className="flex flex-col gap-8 md:place-items-center">
         <Body fontWeight="font-black" fontSize="text-lg">
           {card.name}
         </Body>

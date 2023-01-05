@@ -26,6 +26,13 @@ const cards: Card[] = [
     image: "/sentinel-tower.jpeg",
     price: 0.5,
     quantity: 2
+  },
+  {
+    id: 4,
+    name: "Sentinel Tower",
+    image: "/sentinel-tower.jpeg",
+    price: 0.5,
+    quantity: 2
   }
 ];
 
@@ -35,7 +42,7 @@ export default function Home() {
       <MyHead />
       <div className="flex flex-col gap-2">
         <Container className="flex flex-col gap-4 items-start  lg:gap-16 lg:flex-row ">
-          <div className="flex flex-col gap-4 items-start ">
+          <div className="flex flex-col gap-4 items-start">
             <H1>Calabouço do Android</H1>
             <Body>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
@@ -51,9 +58,9 @@ export default function Home() {
         <div className="bg-light-gray mt-14 w-128"></div>
         <Container>
           <H1>Promoções</H1>
-          <div className="flex flex-col gap-5 md:grid md:grid-cols-4">
+          <div className="flex flex-col gap-8 md:grid md:grid-cols-4">
             {cards.map((card, index) => (
-              <ProductCard card={card} key={index} />
+              <ProductCard key={index} card={card} />
             ))}
           </div>
         </Container>
