@@ -4,7 +4,7 @@ import MobileCart from '../../components/Cart/MobileCart/MobileCart'
 import WebCart from '../../components/Cart/WebCart/WebCart'
 import Container from '../../components/Container/Container'
 import H1 from '../../components/H1/H1'
-import NextPage from '../../components/NextPage/NextPage'
+import TextWithIcon from '../../components/TextWithIcon/TextWithIcon'
 import { useCartContext } from '../../contexts/CartContext'
 
 export default function Cart() {
@@ -32,7 +32,7 @@ export default function Cart() {
           </div>
         </div>
 
-        <NextPage pageTitle="Finalizar compra" />
+        <TextWithIcon text="Finalizar compra" />
       </Container>
     </>
   )

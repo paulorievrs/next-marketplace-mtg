@@ -4,7 +4,7 @@ import { useCartContext } from '../../contexts/CartContext'
 import { formatCurrencyBrl } from '../../utils/format'
 import Body from '../Body/Body'
 import CartIcon from '../icons/CartIcon'
-import NextPage from '../NextPage/NextPage'
+import TextWithIcon from '../TextWithIcon/TextWithIcon'
 import ProductInfoText from './ProductInfoText'
 
 export type Card = {
@@ -39,7 +39,12 @@ export default function ProductCard({
         </Body>
 
         <div className="flex flex-col md:w-full md:text-start">
-          <Image src={card.image} alt="Card image" width={230} height={330} />
+          <Image
+            src={card.image}
+            alt={`${card.name} Image`}
+            width={230}
+            height={330}
+          />
 
           <ProductInfoText
             title={'Cor: '}
@@ -50,8 +55,9 @@ export default function ProductCard({
           <ProductInfoText title={'Edição: '} description={'Dominária'} />
         </div>
 
-        <NextPage
-          pageTitle={formatCurrencyBrl(card.price)}
+        <TextWithIcon
+          data-testid="add-to-cart-btn"
+          text={formatCurrencyBrl(card.price)}
           Icon={CartIcon}
           onClick={() => cartContext?.addItemToCart(card)}
         />

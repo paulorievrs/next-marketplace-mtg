@@ -8,7 +8,7 @@ type InputProps<T extends FieldValues> = {
   name: Path<T>
   type?: React.InputHTMLAttributes<HTMLInputElement>['type']
   error?: string
-  register: UseFormRegister<T>
+  register: UseFormRegister<T> | (() => void)
 } & React.InputHTMLAttributes<HTMLInputElement>
 
 export default function Input<T extends FieldValues>({
@@ -29,12 +29,14 @@ export default function Input<T extends FieldValues>({
       </label>
       <div className="relative">
         <input
+          id={name}
+          name={name}
           {...register(name)}
           type={type === 'password' && isPasswordVisible ? 'text' : type}
           placeholder={props.placeholder || name}
           {...props}
           className={clsx(
-            'pl-1 text-primary h-10 border  rounded outline-0 focus:outline-none w-full',
+            'pl-1 text-primary h-10 border rounded outline-0 focus:outline-none w-full',
             error ? 'border-red' : 'border-primary',
             props.className
           )}

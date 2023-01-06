@@ -1,6 +1,7 @@
 import { Montserrat } from '@next/font/google'
 import clsx from 'clsx'
 import { Color } from '../../utils/getColor'
+
 const montserrat = Montserrat({ subsets: ['latin'] })
 
 type BodyProps = {
