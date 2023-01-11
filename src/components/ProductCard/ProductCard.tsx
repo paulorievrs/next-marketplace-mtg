@@ -1,30 +1,30 @@
-import clsx from 'clsx'
-import Image from 'next/image'
-import { useCartContext } from '../../contexts/CartContext'
-import { formatCurrencyBrl } from '../../utils/format'
-import Body from '../Body/Body'
-import CartIcon from '../icons/CartIcon'
-import TextWithIcon from '../TextWithIcon/TextWithIcon'
-import ProductInfoText from './ProductInfoText'
+import clsx from 'clsx';
+import Image from 'next/image';
+import { useCartContext } from '../../contexts/CartContext';
+import { formatCurrencyBrl } from '../../utils/format';
+import Body from '../Body/Body';
+import CartIcon from '../icons/CartIcon';
+import TextWithIcon from '../TextWithIcon/TextWithIcon';
+import ProductInfoText from './ProductInfoText';
 
 export type Card = {
-  id: number
-  name: string
-  image: string
-  price: number
-  quantity: number
-}
+  id: number;
+  name: string;
+  image: string;
+  price: number;
+  quantity: number;
+};
 
 type ProductCardsProps = {
-  shadow?: boolean
-  card: Card
-}
+  shadow?: boolean;
+  card: Card;
+};
 
 export default function ProductCard({
   shadow = false,
   card,
 }: ProductCardsProps) {
-  const cartContext = useCartContext()
+  const cartContext = useCartContext();
 
   return (
     <div
@@ -53,6 +53,10 @@ export default function ProductCard({
           />
           <ProductInfoText title={'Tipo: '} description={'Instant'} />
           <ProductInfoText title={'Edição: '} description={'Dominária'} />
+          <ProductInfoText
+            title={'Estoque: '}
+            description={`${card.quantity}x`}
+          />
         </div>
 
         <TextWithIcon
@@ -63,5 +67,5 @@ export default function ProductCard({
         />
       </div>
     </div>
-  )
+  );
 }

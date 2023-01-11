@@ -35,7 +35,7 @@ export default function Menu() {
 
   const WebMenu = () => {
     return (
-      <div className="hidden md:flex flex-row gap-8 items-center">
+      <div className="hidden md:flex flex-row gap-12 items-center">
         <MenuItems items={['Teste', 'Teste2', 'Teste3']} type="web" />
       </div>
     );
@@ -43,7 +43,7 @@ export default function Menu() {
 
   return (
     <div className="sm:relative w-full md:px-52">
-      <div className="flex flex-col mb-12 px-4 mt-8 gap-4 md:flex-row md:justify-center md:gap-10">
+      <div className="flex flex-col mb-12 px-4 mt-8 gap-4 md:flex-row md:justify-between md:gap-10">
         <div className="flex flex-row items-center justify-between">
           <span
             className="font-bold text-sm uppercase leading-4 text-light-info w-full lg:whitespace-nowrap cursor-pointer"

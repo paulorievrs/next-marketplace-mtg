@@ -1,12 +1,13 @@
-import Image from 'next/image'
-import { CartItemType } from '../../../contexts/CartContext'
-import { formatCurrencyBrl } from '../../../utils/format'
-import Body from '../../Body/Body'
-import TrashIcon from '../../icons/Trash'
-import { Card } from '../../ProductCard/ProductCard'
-import ProductInfoText from '../../ProductCard/ProductInfoText'
+import Image from 'next/image';
+import { CartItemType } from '../../../contexts/CartContext';
+import { formatCurrencyBrl } from '../../../utils/format';
+import Body from '../../Body/Body';
+import TrashIcon from '../../icons/Trash';
+import { Card } from '../../ProductCard/ProductCard';
+import ProductInfoText from '../../ProductCard/ProductInfoText';
 
 export default function CartItem({ card }: { card: CartItemType<Card> }) {
+  console.log(card);
   return (
     <div className="flex flex-col gap-8 md:justify-center md:items-center pb-4 border-b">
       <div className="flex flex-row gap-4">
@@ -28,7 +29,9 @@ export default function CartItem({ card }: { card: CartItemType<Card> }) {
               />
               <ProductInfoText
                 title={'Valor total:'}
-                description={formatCurrencyBrl(card.price * card.quantity)}
+                description={formatCurrencyBrl(
+                  card.price * card.quantitySelected
+                )}
               />
             </div>
             <div className="flex flex-row place-items-center gap-2">
@@ -47,5 +50,5 @@ export default function CartItem({ card }: { card: CartItemType<Card> }) {
         </div>
       </div>
     </div>
-  )
+  );
 }

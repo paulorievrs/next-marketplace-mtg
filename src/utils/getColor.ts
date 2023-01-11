@@ -1,8 +1,10 @@
 type prop = "text" | "bg" | "border" | "shadow";
 type colors = "primary"
+| "dark-primary"
 | "secondary"
 | "info"
 | "light-info"
+| "light-gray"
 | "white"
 | "red";
 
